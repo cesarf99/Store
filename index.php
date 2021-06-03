@@ -1,7 +1,9 @@
 <?php
-include ('Config\Database.php');
+include ('Models\User.php');
 
-$b= new Database();
+$a = new User();
+$a->GetAll();
+var_dump($a);
 ?>
 
 <!DOCTYPE html>

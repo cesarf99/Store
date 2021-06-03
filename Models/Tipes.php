@@ -1,10 +1,9 @@
 <?php
 
-class Cart {
+class Tipes {
 
     private $id;
-    private $userid;
-    private $orderid;
+    private $type;
     private $db;
 
     public function __construct() {

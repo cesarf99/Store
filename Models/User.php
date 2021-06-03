@@ -1,17 +1,29 @@
 <?php
 
+require ('Config\Database.php');
+
 class User {
+
     private $id;
     private $name;
     private $username;
     private $password;
     private $address;
-    
-     public function __construct() {
-        $this->db = new Database;
-    }
-}  
+    private $db;
 
+    public function __construct() {
+        $this->db = Database::connect();
+    }
+
+    public function GetAll() {
+        $sql = "SELECT * FROM `user`";
+//        $usuario = $this->db->query($sql);
+        $result = mysqli_query($this->db, $sql);
+
+        return $result;
+    }
+
+}
 
 //<?php
 //

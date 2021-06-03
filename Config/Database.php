@@ -2,20 +2,20 @@
 
 class Database {
 
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $db = "Store";
-    private $conn;
+//    private $servername = "localhost";
+//    private $username = "root";
+//    private $password = "";
+//    private $dbname = "Store";
+//    private $db;
 
-    public function __construct() {
+    public static function connect() {
         try {
-            $conn = mysqli_connect($this->servername, $this->username, $this->password, $this->db);
+            $db = mysqli_connect('localhost', 'root', '', 'store');
             echo "Connected successfully";
         } catch (Exception $ex) {
             echo "Failed to connect";
         }
-        return $this->conn;
+        return $db;
     }
 
 }

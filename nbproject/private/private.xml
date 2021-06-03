@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/Store/Models/Orders.php</file>
             <file>file:/C:/xampp/htdocs/Store/index.php</file>
-            <file>file:/C:/xampp/htdocs/Store/Config/Db.php</file>
+            <file>file:/C:/xampp/htdocs/Store/Models/Details.php</file>
+            <file>file:/C:/xampp/htdocs/Store/Models/Cart.php</file>
+            <file>file:/C:/xampp/htdocs/Store/Models/Product.php</file>
+            <file>file:/C:/xampp/htdocs/Store/Models/Tipes.php</file>
+            <file>file:/C:/xampp/htdocs/Store/Models/Roles.php</file>
+            <file>file:/C:/xampp/htdocs/Store/Config/Database.php</file>
             <file>file:/C:/xampp/htdocs/Store/Models/User.php</file>
         </group>
     </open-files>
