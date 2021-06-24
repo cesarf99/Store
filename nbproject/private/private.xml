@@ -3,15 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Store/Models/Orders.php</file>
+            <file>file:/C:/xampp/htdocs/Store/vendor/autoload.php</file>
             <file>file:/C:/xampp/htdocs/Store/index.php</file>
-            <file>file:/C:/xampp/htdocs/Store/Models/Details.php</file>
-            <file>file:/C:/xampp/htdocs/Store/Models/Cart.php</file>
-            <file>file:/C:/xampp/htdocs/Store/Models/Product.php</file>
-            <file>file:/C:/xampp/htdocs/Store/Models/Tipes.php</file>
-            <file>file:/C:/xampp/htdocs/Store/Models/Roles.php</file>
-            <file>file:/C:/xampp/htdocs/Store/Config/Database.php</file>
-            <file>file:/C:/xampp/htdocs/Store/Models/User.php</file>
+            <file>file:/C:/xampp/htdocs/Store/Views/header.php</file>
+            <file>file:/C:/xampp/htdocs/Store/libs/user.lib</file>
+            <file>file:/C:/xampp/htdocs/Store/libs/user_setup.php</file>
+            <file>file:/C:/xampp/htdocs/Store/templates/users.tpl</file>
+            <file>file:/C:/xampp/htdocs/Store/Views/footer.php</file>
+            <file>file:/C:/xampp/htdocs/Store/Db/Db.php</file>
         </group>
     </open-files>
 </project-private>
