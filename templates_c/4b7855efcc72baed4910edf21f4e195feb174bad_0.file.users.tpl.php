@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-24 17:21:46
+/* Smarty version 3.1.39, created on 2021-07-02 13:19:52
   from 'C:\xampp\htdocs\Store\templates\users.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60d4a30a6854a0_10157274',
+  'unifunc' => 'content_60def6586bc607_09565189',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4b7855efcc72baed4910edf21f4e195feb174bad' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Store\\templates\\users.tpl',
-      1 => 1624548105,
+      1 => 1624548203,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60d4a30a6854a0_10157274 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60def6586bc607_09565189 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\Store\\vendor\\smarty\\smarty\\plugins\\function.cycle.php','function'=>'smarty_function_cycle',),));
 ?>
 <table border="0" width="300">
@@ -47,9 +47,9 @@ $_smarty_tpl->tpl_vars['entry']->do_else = false;
 </td> 
             <td><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['entry']->value['ADDRESS'], ENT_QUOTES, 'UTF-8', true);?>
 </td> 
-                   
+
         </tr>
-        
+
     <?php
 }
 if ($_smarty_tpl->tpl_vars['entry']->do_else) {

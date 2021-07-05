@@ -16,7 +16,7 @@ class Db {
     public $conn;
 
     private function connect() {
-        $this->conn = new PDO("mysql:host=localhost;dbname=store", "root", "");
+        $this->conn = new PDO("mysql:host=localhost;dbname=simplestore", "root", "");
     }
 
     private function close() {
