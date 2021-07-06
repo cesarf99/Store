@@ -34,10 +34,46 @@ class Client
     }
    
     
-    function displayclients($data = array()){
+    public function displayclients($data = array()){
         
     $this->tpl->assign('data', $data);
     $this->tpl->display('allclients.tpl');   
+    
+    }
+    public function showloginform(){ 
+        $this->tpl->display('Login.tpl');   
+        
+    }
+    
+    public function login() {
+        session_start();
+        
+        if (!empty($_POST)) {
+            
+            $username = ($_POST['username']);
+            $password = ($_POST['password']);
+        
+            $query = ("SELECT CLIENTID, USERNAME FROM client WHERE USERNAME = '$username' AND PASSWORD = '$password'");
+            $params = null;
+            $login = $this->db->select($query, $params);
+
+            if ($login!=null) {
+ 
+		$_SESSION['id'] = $login[0]["CLIENTID"];
+		$_SESSION['username'] = $login[0]["USERNAME"];
+ 
+		echo "<p>teste: {$_SESSION['username']}</p>";
+            }
+        
+        }
+    
+    
+    }
+    
+    public function logout() {
+        
+        session_start();
+        session_destroy();
     
     }
 }

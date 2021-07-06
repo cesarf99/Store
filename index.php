@@ -17,8 +17,20 @@ $cart = new Cart();
 $product = new Product();
 
 // set the current action
-$_action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'view';
-$cart->index();
+$_action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'index';
+echo $_action;
+switch ($_action) {
+    case 'loginform':
+        $client->showloginform();
+        break;
+    case 'login':
+        $client->login();
+        break;
+    case 'index':
+    default:
+        $cart->index();
+        break;
+}
 ?>
 
 

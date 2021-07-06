@@ -5,7 +5,7 @@
     <a href="Contact">Contact</a>
     <a href="About">About</a>
     <div class="topnav-right">
-        <a href="login.php" data-toggle="modal">Login</a>
+        <a href="{$SCRIPT_NAME}?action=loginform">Login</a>
     </div>
 </div>
 

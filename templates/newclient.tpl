@@ -1,5 +1,5 @@
 {extends file="layout.tpl"}
-{block name=title}Home{/block}
+{block name=title}New Client{/block}
 
 <link rel="stylesheet" href="css/style.css" type="text/css">
 
@@ -17,7 +17,7 @@
                 <h3>
                     Price:{$entry.PRICE}
                 </h3>
-                
+
                 <div>
                     <p>Add to Cart
                         <span style="float:right;">
