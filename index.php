@@ -26,6 +26,15 @@ switch ($_action) {
     case 'login':
         $client->login();
         break;
+    case 'contact':
+        $cart->showcontact();
+        break;
+    case 'about':
+        $cart->showabout();
+        break;
+    case 'products':
+        $product->listproducts();
+        break;
     case 'index':
     default:
         $cart->index();

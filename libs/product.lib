@@ -17,4 +17,24 @@ class Product
 
     }
     
+    public function listproducts(){
+        
+        $query = ("SELECT * FROM product");
+        $params = null;
+
+        $items= $this->db->select($query, $params);
+
+        foreach ($items as $row) 
+        {
+            $rows[] = $row;
+        }
+        
+//        print("<pre>".print_r($rows,true)."</pre>");
+        
+        $this->tpl->assign('data', $rows);
+        $this->tpl->display('productlist.tpl');  
+        
+        
+    }
+    
 }

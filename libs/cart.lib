@@ -36,6 +36,16 @@ class Cart
     
     }
     
+    public function showcontact(){
+        $this->tpl->display('contact.tpl'); 
+    }
+    
+    public function showabout(){
+        $img="img\logo.png";
+        $this->tpl->assign('img', $img);  
+        $this->tpl->display('about.tpl'); 
+    }
+    
     
     
 }
