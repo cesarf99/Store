@@ -4,10 +4,9 @@
     <a class="active" href="index.php">Home</a>
     <a href="Contact">Contact</a>
     <a href="About">About</a>
-
     <div class="topnav-right">
-        <a href="{$SCRIPT_NAME}?action=loginform">Login</a>
+        <a href="{$SCRIPT_NAME}?action=logout">Logout</a>
+        <a>Welcome:{$name}</a>    
     </div>
-
 </div>
 

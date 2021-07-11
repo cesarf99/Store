@@ -6,7 +6,11 @@
     </head>
 
     <header>
-        {include file='header.tpl'}
+        {if isset($logged)}
+            {include file='headerLogged.tpl'}
+        {else}
+            {include file='header.tpl'}
+        {/if}
     </header>
 
     <body class="content">

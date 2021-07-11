@@ -41,8 +41,7 @@ class Client
     
     }
     public function showloginform(){ 
-        $this->tpl->display('Login.tpl');   
-        
+        $this->tpl->display('Login.tpl');    
     }
     
     public function login() {
@@ -53,22 +52,30 @@ class Client
             $username = ($_POST['username']);
             $password = ($_POST['password']);
         
-            $query = ("SELECT CLIENTID, USERNAME FROM client WHERE USERNAME = '$username' AND PASSWORD = '$password'");
+            $query = ("SELECT CLIENTID, USERNAME, NAME FROM client WHERE USERNAME = '$username' AND PASSWORD = '$password'");
             $params = null;
             $login = $this->db->select($query, $params);
-
+//            print("<pre>".print_r($login,true)."</pre>");
             if ($login!=null) {
- 
+                
+                $_SESSION["loggedIn"] == true;
 		$_SESSION['id'] = $login[0]["CLIENTID"];
 		$_SESSION['username'] = $login[0]["USERNAME"];
- 
-		echo "<p>teste: {$_SESSION['username']}</p>";
+                $_SESSION['name'] = $login[0]["NAME"];
+                
+                $this->tpl->assign('logged', 'true');
+                $this->tpl->assign('name', $_SESSION['name']);
+		$this->tpl->display('index.tpl'); 
             }
-        
+            else{
+                $this->tpl->assign('error', 'Login error');
+                $this->tpl->display('landingpage.tpl'); 
+            }
         }
-    
-    
     }
+    
+    
+    
     
     public function logout() {
         

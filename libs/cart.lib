@@ -30,9 +30,12 @@ class Cart
             $rows[] = $row;
         }
 
+        
         $this->tpl->assign('data', $rows);  
-        $this->tpl->display('index.tpl'); 
+        $this->tpl->display('landingpage.tpl'); 
     
     }
+    
+    
     
 }
