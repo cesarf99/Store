@@ -35,6 +35,12 @@ switch ($_action) {
     case 'products':
         $product->listproducts();
         break;
+    case 'registerform':
+        $client->displayregform();
+        break;
+    case 'register':
+        $client->newclient($_POST);
+        break;
     case 'index':
     default:
         $cart->index();

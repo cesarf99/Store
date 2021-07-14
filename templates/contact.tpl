@@ -6,7 +6,7 @@
     <div class="align-center">
         <form action="" method="post">
             <h3>Any questions? We would love to hear from you:</h3>
-            Name:
+            <p>Name:
             <input type="name" id="name">
             <p>
                 Email:  

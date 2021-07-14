@@ -74,7 +74,31 @@ class Client
         }
     }
     
+    public function displayregform(){
+         $this->tpl->display('newclient.tpl');
+    }
     
+    
+    public function newclient($registerform){
+        print_r($registerform);
+        
+        if (!empty($registerform)) {
+            $name = ($registerform['name']);
+            $username = ($registerform['username']);
+            $password = ($registerform['password']);
+            $email = ($registerform['email']);
+            $address = ($registerform['address']);
+            
+            //verificacoes de parametros
+            
+            $query = ("INSERT INTO client (`NAME`, `USERNAME`, `PASSWORD`, `ADDRESS`, `EMAIL`) VALUES ('$name','$username','$password','$address','$email')");
+            $params = null;
+            $register = $this->db->insert($query, $params);
+            
+
+            echo 'Registed';
+        }
+    }
     
     
     public function logout() {
