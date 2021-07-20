@@ -41,9 +41,14 @@ switch ($_action) {
     case 'register':
         $client->newclient($_POST);
         break;
+    case 'verification':
+        $client->accountvalidation();
+        break;
     case 'index':
-    default:
         $cart->index();
+        break;
+    default:
+
         break;
 }
 ?>

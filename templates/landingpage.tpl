@@ -5,9 +5,7 @@
 
 {block name=body}
     <h1>Welcome to our shop , check some of the products available</h1>
-    <div class="align-center">
-        <h1><a href="{$SCRIPT_NAME}?action=registerform">Register now!</a></h1>
-    </div>  
+
     <div class="row">
         {foreach from=$data item="entry"}
             <div class="column" style="border:2px solid black;">

@@ -7,6 +7,7 @@
     
 
     <div class="topnav-right">
+        <a href="{$SCRIPT_NAME}?action=registerform">Register</a>
         <a href="{$SCRIPT_NAME}?action=loginform">Login</a>
     </div>
 

@@ -7,6 +7,16 @@
  */
 
 require_once ('Db/Db.php');
+require_once ('libs/mail.php');
+//use PHPMailer\PHPMailer\PHPMailer;
+//use PHPMailer\PHPMailer\SMTP;
+//use PHPMailer\PHPMailer\Exception;
+//
+////Load Composer's autoloader
+//require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+
 
 class Client 
 {
@@ -80,7 +90,6 @@ class Client
     
     
     public function newclient($registerform){
-        print_r($registerform);
         
         if (!empty($registerform)) {
             $name = ($registerform['name']);
@@ -88,18 +97,75 @@ class Client
             $password = ($registerform['password']);
             $email = ($registerform['email']);
             $address = ($registerform['address']);
+            $hash = md5( rand(0,1000) );
+            $this->emailverification($email);
             
-            //verificacoes de parametros
+            if($this->emailverification($email)==true){
+                $query = ("INSERT INTO client (`NAME`, `USERNAME`, `PASSWORD`, `ADDRESS`, `EMAIL`,`hash`) VALUES ('$name','$username','$password','$address','$email','$hash')");
+                $params = null;
+                $register = $this->db->insert($query, $params);
+                $this->emailvalidation($email,$hash);
             
-            $query = ("INSERT INTO client (`NAME`, `USERNAME`, `PASSWORD`, `ADDRESS`, `EMAIL`) VALUES ('$name','$username','$password','$address','$email')");
-            $params = null;
-            $register = $this->db->insert($query, $params);
-            
-
-            echo 'Registed';
+                echo '<script>alert("Account Created")</script>';
+                $this->tpl->assign('text', 'You created your account, check your email');
+                $this->tpl->display('message.tpl'); 
+            }
+            else{
+                echo '<script>alert("Email already in use")</script>';
+                $this->tpl->display('newclient.tpl');
+            }    
+        }    
+    }
+    
+    public function emailverification($email){
+        
+        $query = ("SELECT * FROM client WHERE EMAIL = '$email'");
+        $params = null;
+        $result = $this->db->select($query, $params);
+        
+        if ($result== null){
+            return true;
+        }
+        else{
+            return false;
         }
     }
     
+    public function emailvalidation($email,$hash){
+        $subject = 'Account verification'; 
+        $body = '<br>Your account has been created.<br>
+        
+        Please click this link to activate your account:<br>
+        http://localhost/Store/index.php?action=verification&email='.$email.'&hash='.$hash.'';                  
+        
+        $mail=new mail();
+        $mail->Send($email,$subject,$body);
+
+    }
+    
+    public function accountvalidation(){
+        $email = $_REQUEST['email'];
+        $hash = $_REQUEST['hash'];
+
+        $query = ("SELECT * FROM client WHERE EMAIL = '$email' AND hash= '$hash' AND active='0'");
+        $params = null;
+        $result = $this->db->select($query, $params);
+        if ($result!=null){
+            $query = ("UPDATE client SET active='1' WHERE EMAIL = '$email' AND hash= '$hash' AND active='0'");
+            $params = null;
+            $update = $this->db->update($query, $params);
+            
+            
+            $this->tpl->assign('text', 'Validated, you can login');
+            $this->tpl->display('message.tpl'); 
+        }
+        else{
+             
+            $this->tpl->assign('text', 'Error');
+            $this->tpl->display('message.tpl');  
+        }
+            
+    }
     
     public function logout() {
         
