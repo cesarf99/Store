@@ -5,9 +5,11 @@
     <a href="{$SCRIPT_NAME}?action=contact">Contact</a>
     <a href="{$SCRIPT_NAME}?action=about">About</a>
     <a href="{$SCRIPT_NAME}?action=products">Products</a>
+
     <div class="topnav-right">
         <a href="{$SCRIPT_NAME}?action=logout">Logout</a>
-        <a>Welcome: {$name}</a>    
+        <a>Welcome: {$smarty.session.name}</a>    
     </div>
+
 </div>
 

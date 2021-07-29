@@ -8,15 +8,6 @@
 
 require_once ('Db/Db.php');
 require_once ('libs/mail.php');
-//use PHPMailer\PHPMailer\PHPMailer;
-//use PHPMailer\PHPMailer\SMTP;
-//use PHPMailer\PHPMailer\Exception;
-//
-////Load Composer's autoloader
-//require 'vendor/autoload.php';
-
-//Create an instance; passing `true` enables exceptions
-
 
 class Client 
 {
@@ -39,7 +30,6 @@ class Client
             $rows[] = $row;
         }
         
-//        print("<pre>".print_r($rows,true)."</pre>");
         return $rows;
     }
    
@@ -55,8 +45,6 @@ class Client
     }
     
     public function login() {
-        session_start();
-        
         if (!empty($_POST)) {
             
             $username = ($_POST['username']);
@@ -65,21 +53,17 @@ class Client
             $query = ("SELECT CLIENTID, USERNAME, NAME FROM client WHERE USERNAME = '$username' AND PASSWORD = '$password'");
             $params = null;
             $login = $this->db->select($query, $params);
-//            print("<pre>".print_r($login,true)."</pre>");
+            
             if ($login!=null) {
-                
-                $_SESSION["loggedIn"] == true;
 		$_SESSION['id'] = $login[0]["CLIENTID"];
 		$_SESSION['username'] = $login[0]["USERNAME"];
                 $_SESSION['name'] = $login[0]["NAME"];
-                
-                $this->tpl->assign('logged', 'true');
-                $this->tpl->assign('name', $_SESSION['name']);
+
 		$this->tpl->display('index.tpl'); 
             }
             else{
-                $this->tpl->assign('error', 'Login error');
-                $this->tpl->display('landingpage.tpl'); 
+                $this->tpl->assign('text', 'Login error');
+                $this->tpl->display('message.tpl'); 
             }
         }
     }
@@ -169,8 +153,9 @@ class Client
     
     public function logout() {
         
-        session_start();
         session_destroy();
+        $this->tpl->assign('text', 'Logged out');
+        $this->tpl->display('message.tpl');  
     
     }
 }

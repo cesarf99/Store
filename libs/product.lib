@@ -28,13 +28,66 @@ class Product
         {
             $rows[] = $row;
         }
-        
 //        print("<pre>".print_r($rows,true)."</pre>");
-        
         $this->tpl->assign('data', $rows);
-        $this->tpl->display('productlist.tpl');  
-        
-        
+        $this->tpl->display('productlist.tpl');   
+    }
+    
+    //gets form and buys or adds to cart
+    public function productdestination(){
+        if (!empty($_POST)) {
+            $productid = $_POST['id'];
+            $userid=$_SESSION['id'];
+            $action=$_POST['destination'];
+            echo $action;
+           
+            if (!isset($action)) {
+                $this->tpl->assign('text', "Action Error");
+                $this->tpl->display('message.tpl'); 
+            }
+            
+            if($action=="Add to cart"){
+                $query = ("INSERT INTO `cart` (`CLIENT_ID`, `PRODUCT_ID`) VALUES ('$userid', '$productid')");
+                $params = null;
+
+                $this->db->insert($query, $params);
+                echo '<script>alert("Added to cart")</script>';
+                $this->listproducts();
+                
+            }
+            elseif($action=="Buy"){
+                
+                $query = ("SELECT * FROM `product` WHERE `PRODUCTID` = $productid");
+                $params = null;
+
+                $product=$this->db->select($query, $params);
+//                print("<pre>".print_r($product,true)."</pre>");
+//                echo $product[0]["QUANTITY"];
+                
+                if($product[0]["QUANTITY"]>0){
+                    
+                    $query = ("SELECT ADDRESS FROM `client` WHERE `CLIENTID` = $userid");
+                    $params = null;
+
+                    $address=$this->db->select($query, $params);
+                    
+                    $data=array(
+                    "productname"=>$product[0]["NAME"],
+                    "img"=>$product[0]["IMGPATH"],
+                    "name"=>$_SESSION['name'],
+                    "address"=>$address[0]["ADDRESS"]);
+                     
+                    $this->tpl->assign('data', $data);
+                    $this->tpl->display('buying.tpl');  
+                }
+                else{
+                    echo '<script>alert("Out of stock")</script>';
+                    $this->listproducts();
+                }
+//                
+            }
+            
+        }
     }
     
 }

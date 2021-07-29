@@ -6,7 +6,7 @@
     </head>
 
     <header>
-        {if isset($logged)}
+        {if $smarty.session!=null}
             {include file='headerLogged.tpl'}
         {else}
             {include file='header.tpl'}

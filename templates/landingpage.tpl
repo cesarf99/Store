@@ -18,13 +18,7 @@
                     Price:{$entry.PRICE}
                 </h3>
 
-                <div>
-                    <p>Add to Cart
-                        <span style="float:right;">
-                            Buy
-                        </span>
-                    </p>
-                </div>
+                
             </div>
         {/foreach}
     </div>

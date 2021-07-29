@@ -9,24 +9,21 @@
     <div class="row">
         {foreach from=$data item="entry"}
             <div class="column" style="border:2px solid black;">
-                <h3>
-                    {$entry.DESCRIPTION}
-                </h3>
+                <form action="{$SCRIPT_NAME}?action=productdestination" method="POST">
+                    <input type="hidden" name="id" value="{$entry.PRODUCTID}"/>
 
-                <img src="{$entry.IMGPATH}" width="50%" height="50%" object-fit: contain">
-                <h3>
-                    Price:{$entry.PRICE}
-                </h3>
-
-                <div>
-                    <p>Add to Cart
-                        <span style="float:right;">
-                            Buy
-                        </span>
-                    </p>
-                </div>
+                    <h3>{$entry.DESCRIPTION}</h3>
+                    <img src="{$entry.IMGPATH}" width="50%" height="50%" object-fit: contain">
+                    <h3>Price:{$entry.PRICE}</h3>
+                    <div>
+                        <input type="submit" name="destination" value="Add to cart"/>
+                        <input type="submit" name="destination" value="Buy" style="float:right;"/> 
+                    </div>
+                </form>
             </div>
         {/foreach}
     </div>
-
 {/block}
+
+
+

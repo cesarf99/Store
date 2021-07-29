@@ -18,6 +18,7 @@ class Cart
 
     }
     
+    //load index
     public function index($data = array()){
         
         $query = ("SELECT * FROM product WHERE IMGPATH IS NOT NULL");
@@ -35,7 +36,7 @@ class Cart
         $this->tpl->display('landingpage.tpl'); 
     
     }
-    
+    //load contact page
     public function showcontact(){
         $this->tpl->display('contact.tpl'); 
     }
@@ -45,7 +46,6 @@ class Cart
         $this->tpl->assign('img', $img);  
         $this->tpl->display('about.tpl'); 
     }
-    
-    
+     
     
 }

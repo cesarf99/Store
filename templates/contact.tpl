@@ -2,12 +2,11 @@
 
 {block name=body}
     <h1>Contact us</h1>
-
     <div class="align-center">
         <form action="" method="post">
             <h3>Any questions? We would love to hear from you:</h3>
             <p>Name:
-            <input type="name" id="name">
+                <input type="name" id="name">
             <p>
                 Email:  
                 <input type="email" id="email">

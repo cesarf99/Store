@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 //directories
 define('CLIENT_DIR', '../Store/');
 define('CART_DIR', '../Store/');
@@ -26,6 +27,9 @@ switch ($_action) {
     case 'login':
         $client->login();
         break;
+    case 'logout':
+        $client->logout();
+        break;
     case 'contact':
         $cart->showcontact();
         break;
@@ -44,11 +48,14 @@ switch ($_action) {
     case 'verification':
         $client->accountvalidation();
         break;
+    case 'productdestination':
+        $product->productdestination();
+        break;
     case 'index':
         $cart->index();
         break;
-    default:
 
+    default:
         break;
 }
 ?>

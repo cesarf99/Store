@@ -16,7 +16,7 @@
             <br>
             <div class="align-center">
                 <input type="submit" value="Login">
-                <p>Don't have an account? <a href="">Sign up now</a></p>
+                <p>Don't have an account? <a href="{$SCRIPT_NAME}?action=add">Sign up now</a></p>
             </div>  
         </form>
     </div>    
