@@ -8,7 +8,7 @@
 
     <div class="topnav-right">
         <a href="{$SCRIPT_NAME}?action=logout">Logout</a>
-        <a>Welcome: {$smarty.session.name}</a>    
+        <a href="{$SCRIPT_NAME}?action=profile">Welcome: {$smarty.session.name}</a>    
     </div>
 
 </div>

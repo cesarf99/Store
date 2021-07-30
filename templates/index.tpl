@@ -9,9 +9,11 @@
     <h1>Items in Cart:</h1>
     <table border="0">
         {foreach from=$data item="entry"}
-            <tr >
+            <tr>
+                <td>{$entry.NAME|escape}</td> 
                 
-                
+
+
             </tr>
         {foreachelse}
             <tr>
@@ -19,10 +21,5 @@
             </tr>
         {/foreach}
     </table>
-        
-    
-    
-
-
 
 {/block}
