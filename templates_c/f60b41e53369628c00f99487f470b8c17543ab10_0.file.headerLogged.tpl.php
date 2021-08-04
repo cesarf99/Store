@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-29 18:54:49
+/* Smarty version 3.1.39, created on 2021-08-04 20:16:40
   from 'C:\xampp\htdocs\Store\templates\headerLogged.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6102dd59a6d536_24751721',
+  'unifunc' => 'content_610ad988b2c9b4_30913728',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f60b41e53369628c00f99487f470b8c17543ab10' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Store\\templates\\headerLogged.tpl',
-      1 => 1627577681,
+      1 => 1628101000,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6102dd59a6d536_24751721 (Smarty_Internal_Template $_smarty_tpl) {
+function content_610ad988b2c9b4_30913728 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" href="css/style.css" type="text/css">
 
 <div class="topnav">
@@ -33,6 +33,8 @@ function content_6102dd59a6d536_24751721 (Smarty_Internal_Template $_smarty_tpl)
 ?action=products">Products</a>
 
     <div class="topnav-right">
+         <a href="<?php echo $_smarty_tpl->tpl_vars['SCRIPT_NAME']->value;?>
+?action=cart">Cart</a>
         <a href="<?php echo $_smarty_tpl->tpl_vars['SCRIPT_NAME']->value;?>
 ?action=logout">Logout</a>
         <a href="<?php echo $_smarty_tpl->tpl_vars['SCRIPT_NAME']->value;?>

@@ -46,6 +46,28 @@ class Cart
         $this->tpl->assign('img', $img);  
         $this->tpl->display('about.tpl'); 
     }
+    
+    public function showcart(){
+        
+        $id=$_SESSION['id'];
+        $query = ("SELECT CLIENT_ID, PRODUCT_ID FROM cart WHERE CLIENT_ID = '$id'");
+        $params = null;
+        $cartitems = $this->db->select($query, $params);
+        
+        foreach ($cartitems as $item){
+            $itemid=$item['PRODUCT_ID'];
+            $query = ("SELECT * FROM product WHERE PRODUCTID = '$itemid'");
+            $params = null;
+            $result = $this->db->select($query, $params);
+            foreach ($result as $row){
+                $rows[] = $row;
+            } 
+        }
+        
+        //print("<pre>".print_r($rows,true)."</pre>");  
+        $this->tpl->assign('data', $rows);  
+        $this->tpl->display('cartitems.tpl'); 
+    }
      
     
 }

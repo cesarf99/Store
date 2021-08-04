@@ -7,7 +7,7 @@
     <h1>Logged In</h1>
     {$smarty.session.name}
     <h1>Items in Cart:</h1>
-    <table border="0">
+    <table border="1">
         {foreach from=$data item="entry"}
             <tr>
                 <td>{$entry.NAME|escape}</td> 

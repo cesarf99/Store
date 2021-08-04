@@ -57,7 +57,9 @@ switch ($_action) {
     case 'clients':
         $client->displayclients($client->getall());
         break;
-
+    case 'cart':
+        $cart->showcart();
+        break;
     default:
         break;
 }

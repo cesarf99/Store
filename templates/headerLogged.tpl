@@ -7,6 +7,7 @@
     <a href="{$SCRIPT_NAME}?action=products">Products</a>
 
     <div class="topnav-right">
+         <a href="{$SCRIPT_NAME}?action=cart">Cart</a>
         <a href="{$SCRIPT_NAME}?action=logout">Logout</a>
         <a href="{$SCRIPT_NAME}?action=profile">Welcome: {$smarty.session.name}</a>    
     </div>

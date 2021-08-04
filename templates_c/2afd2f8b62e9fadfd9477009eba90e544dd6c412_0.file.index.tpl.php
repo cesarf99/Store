@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-29 19:40:32
+/* Smarty version 3.1.39, created on 2021-08-04 20:10:37
   from 'C:\xampp\htdocs\Store\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6102e810cff001_56301422',
+  'unifunc' => 'content_610ad81d643ec0_69377687',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2afd2f8b62e9fadfd9477009eba90e544dd6c412' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Store\\templates\\index.tpl',
-      1 => 1627580425,
+      1 => 1628100628,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6102e810cff001_56301422 (Smarty_Internal_Template $_smarty_tpl) {
+function content_610ad81d643ec0_69377687 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3309204686102e810cedbd0_56925272', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_662867075610ad81d391819_85226636', 'title');
 ?>
 
 
 <link rel="stylesheet" href="css/style.css" type="text/css">
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14289516436102e810cee902_20674155', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_767033280610ad81d394c33_28664621', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "layout.tpl");
 }
 /* {block 'title'} */
-class Block_3309204686102e810cedbd0_56925272 extends Smarty_Internal_Block
+class Block_662867075610ad81d391819_85226636 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_3309204686102e810cedbd0_56925272',
+    0 => 'Block_662867075610ad81d391819_85226636',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_14289516436102e810cee902_20674155 extends Smarty_Internal_Block
+class Block_767033280610ad81d394c33_28664621 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_14289516436102e810cee902_20674155',
+    0 => 'Block_767033280610ad81d394c33_28664621',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,7 +67,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <?php echo $_SESSION['name'];?>
 
     <h1>Items in Cart:</h1>
-    <table border="0">
+    <table border="1">
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data']->value, 'entry');
 $_smarty_tpl->tpl_vars['entry']->do_else = true;

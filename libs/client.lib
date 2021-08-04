@@ -81,8 +81,6 @@ class Client
                     }       
                 }
                 
-                print("<pre>".print_r($garden,true)."</pre>");
-                
                 $this->tpl->assign('data', $rows);
 		$this->tpl->display('index.tpl'); 
             }
